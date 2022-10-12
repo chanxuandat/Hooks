@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import TodoList from "./Todolist/todo";
+import Todo from "./Todolist/twoway";
+import { UseEffect } from "./useEffect/UseEffect";
+import UseState from "./useState/useState";
 
 function App() {
+  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ padding: 24 }}>
+      <button onClick={() => setShow(!show)}>show state</button>
+      {show && (
+        <div>
+          <UseState />
+          <Todo />
+          <TodoList />
+        </div>
+      )}
+      <button onClick={() => setShow1(!show1)}>show effect</button>
+    {show1 && (
+      <UseEffect/>
+    )}
     </div>
   );
 }
