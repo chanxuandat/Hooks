@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ChatApp from "./ChatApp";
 
 const tabs = ["posts", "comments"];
 
@@ -32,6 +33,7 @@ export const UseEffect = () => {
 
   return (
     <div>
+    <ChatApp/>
       {tabs.map((tab) => (
         <button
           key={tab}
@@ -50,6 +52,7 @@ export const UseEffect = () => {
       <h1>{countdown}</h1>
       <input type="file" onChange={handlePreviewAvatar} />
       {avatar && <img src={avatar.preview} alt="as" width="80%" />}
+     
     </div>
   );
 };
